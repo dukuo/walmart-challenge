@@ -8,14 +8,22 @@
     "type-check": "tsc"
   },
   "dependencies": {
+    "@material-ui/core": "^4.10.2",
+    "formik": "^2.1.4",
+    "mongoose": "^5.9.20",
     "next": "latest",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react-dom": "^16.12.0",
+    "styled-components": "^5.1.1",
+    "yup": "^0.29.1"
   },
   "devDependencies": {
+    "@types/material-ui": "^0.21.7",
+    "@types/mongoose": "^5.7.27",
     "@types/node": "^12.12.21",
     "@types/react": "^16.9.16",
     "@types/react-dom": "^16.9.4",
+    "@types/styled-components": "^5.1.0",
     "typescript": "3.7.3"
   },
   "license": "ISC"
