@@ -1,0 +1,30 @@
+
+version: "3"
+services:
+  search-engine-app:
+    build:
+      context: ./walmart-search-engine-app
+    command: yarn dev
+    depends_on:
+      - db
+    volumes:
+      - ./walmart-search-engine-app:/search-engine-app
+      - ./walmart-search-engine-app/package.json:/search-engine-app/package.json
+      - ./walmart-search-engine-app/yarn.lock:/search-engine-app/yarn.lock
+    ports:
+      - "3000:3000"
+  db:
+    image: mongo:3.6.8
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=productListUser
+      - MONGO_INITDB_ROOT_PASSWORD=productListPassword
+    ports:
+      - "27017:27017"
+  migration:
+    image: mongo:3.6.8
+    depends_on:
+      - db
+    working_dir: /database
+    command: /bin/bash -c './import.sh db'
+    volumes:
+      - ./products-db/database:/database
