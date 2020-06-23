@@ -7,6 +7,8 @@ services:
     command: yarn dev
     depends_on:
       - db
+    environment:
+      - MONGO_URI
     volumes:
       - ./walmart-search-engine-app:/search-engine-app
       - ./walmart-search-engine-app/package.json:/search-engine-app/package.json
