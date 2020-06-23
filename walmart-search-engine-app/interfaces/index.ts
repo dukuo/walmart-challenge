@@ -1,10 +1,14 @@
-// You can include shared interfaces/types in a separate file
-// and then use them in any component by importing them. For
-// example, to import the interface below do:
-//
-// import User from 'path/to/interfaces';
+import { Document } from 'mongoose'
 
 export type User = {
   id: number
   name: string
+}
+
+export interface Product extends Document {
+  id: number
+  brand: string
+  description: string
+  image: string
+  price: number
 }
