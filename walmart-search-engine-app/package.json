@@ -5,12 +5,16 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "type-check": "tsc"
+    "type-check": "tsc",
+    "test": "jest"
   },
   "dependencies": {
     "@material-ui/core": "^4.10.2",
     "axios": "^0.19.2",
+    "enzyme": "^3.11.0",
     "formik": "^2.1.4",
+    "jest": "^26.0.1",
+    "jest-enzyme": "^7.1.2",
     "mongoose": "^5.9.20",
     "next": "latest",
     "react": "^16.12.0",
@@ -20,6 +24,8 @@
   },
   "devDependencies": {
     "@types/axios": "^0.14.0",
+    "@types/enzyme": "^3.10.5",
+    "@types/jest": "^26.0.0",
     "@types/material-ui": "^0.21.7",
     "@types/mongoose": "^5.7.27",
     "@types/node": "^12.12.21",
