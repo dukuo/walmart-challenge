@@ -9,8 +9,6 @@ const cors = Cors({
 const handler = async (_req: NextApiRequest, res: NextApiResponse) => {
     await runMiddleware(_req, res, cors)
 
-    console.log(_req.query)
-    
     res.json({ message: 'Hello Wasdasdsorld!' })
 }
 
