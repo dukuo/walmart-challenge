@@ -20,5 +20,5 @@
     "baseUrl": "."
   },
   "exclude": ["node_modules"],
-  "include": ["**/*.ts", "**/*.tsx"]
+  "include": ["**/*.ts", "**/*.tsx", "theme/shadows.js", "theme/breakpoints.js", "theme/index.ks"]
 }
