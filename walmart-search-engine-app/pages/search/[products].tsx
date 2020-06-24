@@ -1,12 +1,11 @@
-import {
-    Button
-} from '@material-ui/core'
+import Layout from '../../components/Layout'
 
 const SearchProduct = () => {
-    return <Button
-        color="primary"
-        variant="contained"
-        onClick={() => console.log("YAY")}>Howdy</Button>
+    return (
+        <Layout>
+        </Layout>
+    )
 }
+
 
 export default SearchProduct
