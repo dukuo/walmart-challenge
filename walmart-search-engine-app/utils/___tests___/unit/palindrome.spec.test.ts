@@ -3,28 +3,6 @@ import {
     isLongerThanThreeChars
 } from '../..'
 
-const dataWithPalindromeId = {
-    id: 181,
-    brand: 'asdw',
-    description: 'Hoaso llksdk io',
-    image: 'http://some.tld/image.jpeg',
-    price: 83838
-}
-const dataWithPalindromeBrand = {
-    id: 198,
-    brand: 'abba o abba',
-    description: 'asdjj ejjeko owñ',
-    image: 'http://some.tld/image.jpeg',
-    price: 288383
-}
-const dataWithPalindromeDescription = {
-    id: 239,
-    brand: 'asdjalwl',
-    description: 'no o on',
-    image: 'http://some.tld/image.jpeg',
-    price: 88472
-}
-
 describe('Palindrome algorithm unit test', () => {
     it('should detect string as valid palindrome', () => {
         const expectedAssertion = true
