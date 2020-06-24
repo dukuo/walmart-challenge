@@ -1,9 +1,31 @@
 import {
     isPalindrome,
     isLongerThanThreeChars
-} from '../../../../../../utils'
+} from '../..'
 
-describe('palindrome algorithm', () => {
+const dataWithPalindromeId = {
+    id: 181,
+    brand: 'asdw',
+    description: 'Hoaso llksdk io',
+    image: 'http://some.tld/image.jpeg',
+    price: 83838
+}
+const dataWithPalindromeBrand = {
+    id: 198,
+    brand: 'abba o abba',
+    description: 'asdjj ejjeko owñ',
+    image: 'http://some.tld/image.jpeg',
+    price: 288383
+}
+const dataWithPalindromeDescription = {
+    id: 239,
+    brand: 'asdjalwl',
+    description: 'no o on',
+    image: 'http://some.tld/image.jpeg',
+    price: 88472
+}
+
+describe('Palindrome algorithm unit test', () => {
     it('should detect string as valid palindrome', () => {
         const expectedAssertion = true
         const query = 'obbo'
@@ -17,14 +39,14 @@ describe('palindrome algorithm', () => {
         const expectedAssertion = false
         const query = 'asdf'
         const checkForPalindrome = isPalindrome(query)
-        
+
         expect.assertions(1)
 
         expect(checkForPalindrome).toBe(expectedAssertion)
     })
 
     it('should detect phrase as palindrome', () => {
-        const expectedAssertion = true 
+        const expectedAssertion = true
         const query = 'bab a bab'
         const checkForPalindrome = isPalindrome(query)
 
@@ -77,5 +99,4 @@ describe('palindrome algorithm', () => {
         expect.assertions(1)
         expect(checkLength).toBe(expectedAssertion)
     })
-    
 })

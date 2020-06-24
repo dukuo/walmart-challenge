@@ -1,5 +1,5 @@
-import inMemoryMongoDatabase from '../../../utils/inMemoryMongo'
-import Product from '../'
+import inMemoryMongoDatabase from '../../utils/inMemoryMongo'
+import Product from '../models/Product'
 
 const erroneousTestData = {
     id: '12311',
@@ -14,7 +14,7 @@ const correctTestData = {
     brand: 'aobo',
     description: 'asdas fasdas dd',
     image: 'http://some.tld/image.jpeg',
-
+    price: 123002
 }
 describe('Mongoose Model & Schema', () => {
     // It's just so easy to connect to the MongoDB Memory Server 
