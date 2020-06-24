@@ -5,6 +5,8 @@ import { ThemeProvider as MuiThemeProvider } from "@material-ui/core/styles";
 import { ThemeProvider } from "styled-components";
 import muiTheme from '../theme';
 
+const selectedThemeVariant = 1 // 0 - Dark | 1 - Light (this could be enhanced with react context)
+
 function App(props: any) {
     // const store = useStore(pageProps.initialReduxState)
     const { Component, pageProps } = props
@@ -24,12 +26,12 @@ function App(props: any) {
 
                 <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
             </Head>
-            <MuiThemeProvider theme={muiTheme[1]}>
-                <ThemeProvider theme={muiTheme[1]}>
+            <ThemeProvider theme={muiTheme[selectedThemeVariant]}>
+                <MuiThemeProvider theme={muiTheme[selectedThemeVariant]}>
                     <CssBaseline />
                     <Component {...pageProps} />
-                </ThemeProvider>
-            </MuiThemeProvider>
+                </MuiThemeProvider>
+            </ThemeProvider>
         </>
     )
 }

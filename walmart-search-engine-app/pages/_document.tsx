@@ -50,13 +50,13 @@ MyDocument.getInitialProps = async (ctx) => {
     // 4. page.render
 
     // Render app and page and get the context of the page with collected side effects.
-    const sheets = new ServerStyleSheets();
+    const materialSheets = new ServerStyleSheets();
     const styledSheets = new StyledServerStyleSheet()
     const originalRenderPage = ctx.renderPage;
     try {
         ctx.renderPage = () =>
             originalRenderPage({
-                enhanceApp: (App) => (props) => styledSheets.collectStyles(sheets.collect(<App {...props} />)),
+                enhanceApp: (App) => (props) => styledSheets.collectStyles(materialSheets.collect(<App {...props} />)),
             });
 
         const initialProps = await Document.getInitialProps(ctx);
@@ -67,7 +67,7 @@ MyDocument.getInitialProps = async (ctx) => {
             styles: (
                 <>
                     {initialProps.styles}
-                    {sheets.getStyleElement()}
+                    {materialSheets.getStyleElement()}
                     {styledSheets.getStyleElement()}
                 </>
             )
