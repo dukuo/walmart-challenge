@@ -40,5 +40,5 @@ describe('product record transformation', () => {
         const fiftyPercentDiscountedProducts: Array<ProductRecord> = applyTransformation(sampleProducts, discountTransformation)
         expect(fiftyPercentDiscountedProducts[0].price).toBe(sampleProducts[0].price * discountFactor)
     })
-
+    
 })
