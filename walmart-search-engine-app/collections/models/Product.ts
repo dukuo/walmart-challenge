@@ -1,10 +1,9 @@
-import * as mongoose from 'mongoose'
-import { Schema } from 'mongoose'
+import { model, Schema } from 'mongoose'
 import { Product } from '../../interfaces'
 
 const schemaConfig = {
     id: {
-        type: String,
+        type: Number,
         required: true,
         unique: true
     },
@@ -27,4 +26,4 @@ const schemaConfig = {
 }
 const ProductSchema:Schema = new Schema(schemaConfig)
 
-export default mongoose.model<Product>('Product', ProductSchema)
+export default model<Product>('Product', ProductSchema)

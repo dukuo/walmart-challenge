@@ -1,4 +1,4 @@
-import * as mongoose from 'mongoose'
+import mongoose from 'mongoose'
 import inMemoryMongoDatabase from '../../utils/inMemoryMongo'
 import Product from '../models/Product'
 
@@ -37,33 +37,25 @@ describe('Mongoose Model & Schema with in-memory mode', () => {
 
     it('should save a Product successfully', async () => {
         const product = new Product(correctTestData)
+        const spy = jest.spyOn(product, 'save')
+
         await product.save()
-        expect(product._id).toBeDefined()
+        expect.assertions(3)
+        expect(spy).toBeCalled()
+        expect(product).toMatchObject({
+            ...correctTestData
+        })
+        expect(product.id).toBe(correctTestData.id)
     })
     it('should fail to validate new Product', async () => {
         const productWithoutRequiredField = new Product(incompleteTestData)
-        let err:any
-        try {
-            err = await productWithoutRequiredField.save()
-        } catch (e) {
-            e = err
-        }
-        expect(err).toBeDefined()
-        expect(err).toBeInstanceOf(mongoose.Error.ValidationError)
-        expect(err?.errors.description).toBeDefined()
+        expect(productWithoutRequiredField.validate).toThrow()
     })
 
     it('should fail validation for id', async () => {
         const productWithErronousId = new Product(erroneousTestData)
-        let err:any
-        try {
-            err = await productWithErronousId.save()
-        } catch (e) {
-            err = e
-        }
-        expect(err).toBeDefined()
-        expect(err).toBeInstanceOf(mongoose.Error.ValidationError)
-        expect(err.errors.id).toBeDefined()
+        expect.assertions(1)
+        expect(productWithErronousId.validate).toThrow()
     })
 })
 
