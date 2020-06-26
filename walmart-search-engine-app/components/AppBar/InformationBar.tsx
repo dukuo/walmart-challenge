@@ -1,3 +1,4 @@
+import React from 'react'
 import styled from "styled-components"
 import { Grid, Link } from "@material-ui/core"
 
@@ -14,7 +15,7 @@ const StyledTopGrid = styled(Grid)`
 `
 const InlineWhatsAppButton = styled(Link)`
     && {
-        color: ${props => props.theme.palette.main};
+        color: ${props => props.theme.palette.primary.main};
     }
 `
 const InformationBar = () => (

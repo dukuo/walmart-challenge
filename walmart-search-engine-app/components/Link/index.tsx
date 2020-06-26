@@ -29,7 +29,7 @@ function Link(props:any) {
   const { activeClassName, router, className: classNameProps, innerRef, naked, ...other } = props;
 
   const className = clsx(classNameProps, {
-    [activeClassName]: router.pathname === props.href && activeClassName,
+    [activeClassName]: router && router.pathname === props.href && activeClassName,
   });
 
   if (naked) {
@@ -50,7 +50,7 @@ Link.propTypes = {
   prefetch: PropTypes.bool,
   router: PropTypes.shape({
     pathname: PropTypes.string.isRequired,
-  }).isRequired,
+  }),
 };
 
 Link.defaultProps = {
@@ -59,4 +59,4 @@ Link.defaultProps = {
 
 const RouterLink = withRouter(Link);
 
-export default React.forwardRef((props, ref) => <RouterLink {...props} innerRef={ref} />);
+export default React.forwardRef((props:any, ref) => <RouterLink {...props} innerRef={ref} />);

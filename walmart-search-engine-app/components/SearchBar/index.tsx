@@ -1,20 +1,22 @@
+import React from 'react'
 import * as Yup from 'yup'
 
 import SearchBarForm from './SearchBarForm'
 import { FormValues } from './SearchBarForm/SearchForm'
 
-const SearchBar = () => {
-    const validation = Yup
-        .object()
-        .shape({
-            query: Yup
-                .string()
-                .required(`Ingresa al menos 3 caracteres`),
+export const validation = Yup
+    .object()
+    .shape({
+        query: Yup
+            .string()
+            .min(4)
+            .required(`Ingresa al menos 4 caracteres`),
 
-        })
-    const propsToValues:FormValues = {
-        query: ''
-    }
+    })
+export const propsToValues: FormValues = {
+    query: ''
+}
+const SearchBar = () => {
     const onSubmitHandler = () => {
 
     }

@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react'
 import styled from 'styled-components'
 import Head from 'next/head'
+import { TEST_ID_APP_LAYOUT } from '../constants/testIds'
 import AppBar from './AppBar'
 import Footer from './Footer'
 import InformationBar from './AppBar/InformationBar'
@@ -15,7 +16,7 @@ const FullWidthContainer = styled.div`
 `
 
 const Layout = ({ children, title = '#JuntosNosCuidamos' }: Props) => (
-  <FullWidthContainer>
+  <FullWidthContainer data-testid={TEST_ID_APP_LAYOUT}>
     <Head>
       <title>{title}</title>
       <meta charSet="utf-8" />

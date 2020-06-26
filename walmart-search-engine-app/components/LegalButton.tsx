@@ -1,16 +1,18 @@
+import React from 'react'
 import styled from 'styled-components'
 import {
     Button
 } from '@material-ui/core'
-import { TXT_BUTTON_LEGAL } from 'constants/text'
+import { TXT_BUTTON_LEGAL } from '../constants/text'
+import Link from './Link'
 
-const StyledButton = styled(Button)`
+const StyledButton:any = styled(Button)`
     background: #FFF;
     color: ${props => props.theme.palette.main}
 `
 
 const LegalButton = () => (
-    <StyledButton
+    <StyledButton   
         fullWidth
         variant="contained"
     >
