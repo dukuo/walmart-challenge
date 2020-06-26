@@ -1,0 +1,6 @@
+export const TEST_ID_APP_BAR = 'app-bar'
+export const TEST_ID_APP_LAYOUT = 'app-layout'
+export const TEST_ID_APP_FOOTER = 'footer'
+export const TEST_ID_BUTTON_MENU = 'app-bar-menu'
+export const TEST_ID_BUTTON_SUPERMARKET = 'app-supermarket-button'
+export const TEST_ID_APP_PAGINATION = 'app-pagination'
