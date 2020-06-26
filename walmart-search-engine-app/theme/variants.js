@@ -4,51 +4,55 @@ const darkVariant = {
   name: "Dark",
   palette: {
     primary: {
-      main: indigo[600],
+      main: "#2C70BF",
       contrastText: "#FFF"
     },
     secondary: {
-      main: indigo[400],
-      contrastText: "#FFF"
+      main: "#F7BB5A",
+      contrastText: "#2C70BF"
+    },
+    darkPrimary: {
+      main: "#133355",
+      contrastText: "#F7BB5A"
     }
   },
   header: {
     color: "#FFF",
-    background: "#00216C",
+    background: "#2C70BF",
     search: {
-      color: grey[500]
+      color: "#BCBFCA"
     },
     indicator: {
-      background: indigo[500]
+      background: red[700]
     }
   },
   sidebar: {
-    color: "#FFF",
-    background: indigo[600],
+    color: grey[900],
+    background: "#FFF",
     header: {
       color: "#FFF",
-      background: indigo[700],
+      background: blue[800],
       brand: {
         color: "#FFFFFF"
       }
     },
     footer: {
-      color: "#FFF",
-      background: indigo[700],
+      color: grey[900],
+      background: grey[100],
       online: {
-        background: "#FFF"
+        background: green[500]
       }
     },
     category: {
-      fontWeight: 400
+      fontWeight: 600
     },
     badge: {
-      color: "#000",
-      background: "#FFF"
+      color: "#FFF",
+      background: green[600]
     }
   },
   body: {
-    background: grey[900]
+    background: grey[100]
   },
   spacer: {
     borderColor: grey[300]
@@ -65,6 +69,10 @@ const lightVariant = {
     secondary: {
       main: "#F7BB5A",
       contrastText: "#2C70BF"
+    },
+    darkPrimary: {
+      main: "#20578B",
+      contrastText: "#F7BB5A"
     }
   },
   header: {
