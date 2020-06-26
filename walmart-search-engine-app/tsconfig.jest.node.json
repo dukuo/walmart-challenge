@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+        "jsx": "react",
+        "allowJs": true,
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "noImplicitAny": true,
+        "sourceMap": true,
+        "lib": [
+            "es2017",
+            "dom"
+          ],
+        "typeRoots": [
+            "node_modules/@types"
+        ],
+        "target": "es5",
+    },
+    "exclude": [
+      "node_modules",
+      "out",
+      ".next"
+    ]
+}
