@@ -1,37 +1,36 @@
 module.exports = {
-    moduleFileExtensions: [
-      "ts",
-      "tsx",
-      "js"
-    ],
-    transform: {
-      "^.+\\.tsx?$": "ts-jest"
-    },
-    testMatch: [
-      "**/*.(test|spec).(ts|tsx)"
-    ],
-    globals: {
-      "ts-jest": {
-        babelConfig: true,
-        tsConfig: "jest.tsconfig.json"
+  moduleNameMapper: {
+    "^.+\\.svg$": "<rootDir>/__mocks__/svgrMock.js",
+  },
+  
+  projects: [
+    {
+      displayName: "FRONTEND",
+      preset: "ts-jest/presets/js-with-ts",
+      testEnvironment: "jsdom",
+      moduleFileExtensions: ["ts", "tsx", "js"],
+      transform: {
+        "^.+\\.(ts|tsx)$": "ts-jest",
+        // "^.+\\.svg$": "<rootDir>/__mocks__/svgrMock.js"
+      },
+      testMatch: ["<rootDir>/**/*.(test|spec).(ts|tsx)"],
+      setupFilesAfterEnv: ["<rootDir>/___tests___/config/setupJest.ts"],
+      testPathIgnorePatterns: ["./.next/", "./node_modules/", '<rootDir>/pages/api/', '<rootDir>/collections'],
+      globals: {
+        "ts-jest": {
+          tsConfig: "tsconfig.jest.json"
+        }
       }
     },
-    coveragePathIgnorePatterns: [
-      "/node_modules/",
-      "enzyme.js"
-    ],
-    setupFilesAfterEnv: [
-      "@testing-library/jest-dom/extend-expect"
-    ],
-    coverageReporters: [
-      "json",
-      "lcov",
-      "text",
-      "text-summary"
-    ],
-    moduleNameMapper: {
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/mocks.js",
-      "\\.(css|less|scss)$": "<rootDir>/__mocks__/mocks.js"
-    },
-    testEnvironment: 'node'
-  };
+    {
+      displayName: 'API & MongoDB',
+      testEnvironment: 'node',
+      preset: "ts-jest/presets/js-with-ts",
+      testMatch: ["<rootDir>/pages/api/**/*.(test|spec).(ts|tsx)", "<rootDir>/collections/**/*.(test|spec).(ts|tsx)"],
+      moduleFileExtensions: ["ts", "tsx", "js"],
+      transform: {
+        "^.+\\.(ts|tsx)$": "ts-jest"
+      },
+    }
+  ]
+};
