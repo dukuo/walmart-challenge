@@ -1,8 +1,4 @@
 module.exports = {
-  moduleNameMapper: {
-    "^.+\\.svg$": "<rootDir>/__mocks__/svgrMock.js",
-  },
-  
   projects: [
     {
       displayName: "FRONTEND",
@@ -11,7 +7,10 @@ module.exports = {
       moduleFileExtensions: ["ts", "tsx", "js"],
       transform: {
         "^.+\\.(ts|tsx)$": "ts-jest",
-        // "^.+\\.svg$": "<rootDir>/__mocks__/svgrMock.js"
+        // "^.+\\.svg$": "<rootDir>/__mocks__/svgrMock.ts"
+      },
+      moduleNameMapper: {
+        "\\.svg": "<rootDir>/__mocks__/svgrMock.ts"
       },
       testMatch: ["<rootDir>/**/*.(test|spec).(ts|tsx)"],
       setupFilesAfterEnv: ["<rootDir>/___tests___/config/setupJest.ts"],
@@ -31,6 +30,11 @@ module.exports = {
       transform: {
         "^.+\\.(ts|tsx)$": "ts-jest"
       },
+      globals: {
+        "ts-jest": {
+          tsConfig: "tsconfig.jest.node.json"
+        }
+      }
     }
   ]
 };
