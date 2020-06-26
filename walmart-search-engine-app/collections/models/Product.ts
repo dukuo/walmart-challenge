@@ -1,5 +1,6 @@
-import mongoose, { Schema } from 'mongoose'
-import { Product } from 'interfaces/'
+import * as mongoose from 'mongoose'
+import { Schema } from 'mongoose'
+import { Product } from '../../interfaces'
 
 const schemaConfig = {
     id: {
