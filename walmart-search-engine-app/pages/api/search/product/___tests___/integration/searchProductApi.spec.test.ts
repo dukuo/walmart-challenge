@@ -1,4 +1,4 @@
-import http from 'http'
+import * as http from 'http'
 import fetch from 'isomorphic-unfetch'
 import listen from 'test-listen'
 import { apiResolver } from 'next-server/dist/server/api-utils'
