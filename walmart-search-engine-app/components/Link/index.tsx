@@ -14,7 +14,7 @@ function NextComposed(props:any) {
     </NextLink>
   );
 }
-const NextComposedWithRef = React.forwardRef((props, ref) => <NextComposed {...props} forwardedRef={ref} />);
+const NextComposedWithRef = React.forwardRef((props:any, ref:any) => <NextComposed {...props} forwardedRef={ref} />);
 
 NextComposed.propTypes = {
   as: PropTypes.string,
@@ -59,4 +59,4 @@ Link.defaultProps = {
 
 const RouterLink = withRouter(Link);
 
-export default React.forwardRef((props:any, ref) => <RouterLink {...props} innerRef={ref} />);
+export default React.forwardRef((props:any, ref:any) => <RouterLink {...props} innerRef={ref} />);
