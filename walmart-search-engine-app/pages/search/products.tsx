@@ -2,7 +2,7 @@ import React from 'react'
 import { useRouter } from 'next/router'
 import styled from 'styled-components'
 import axios from 'axios'
-import { Grid, Hidden } from '@material-ui/core'
+import { Grid, Hidden, CircularProgress } from '@material-ui/core'
 import SearchResults from '../../components/SearchResults'
 import { API_SEARCH_PRODUCT } from '../../constants/router'
 import Layout from '../../components/Layout'
@@ -85,7 +85,7 @@ const SearchProduct = (props: any) => {
             <Grid container>
                 <Grid item xs={12} sm={3}></Grid>
                 <Grid item xs={12} sm={9}>
-                    {isLoading && <p>Cargando...</p>}
+                    {isLoading && <CircularProgress />}
                     {!isLoading && <SearchResults products={activeProducts} />}
                 </Grid>
 

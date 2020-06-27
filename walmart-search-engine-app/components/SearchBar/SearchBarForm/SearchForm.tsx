@@ -4,6 +4,7 @@ import { FormikProps } from 'formik'
 import {
     IconButton,
     InputBase,
+    CircularProgress,
     TextField,
     Paper,
 } from '@material-ui/core'
@@ -41,9 +42,12 @@ const SearchForm = (props: OtherProps & FormikProps<FormValues>) => {
     return (
         <SearchBarPaper>
             <form onSubmit={handleSubmit} data-testid="search-form">
-                <IconButton type="submit">
-                    <SearchIcon />
-                </IconButton>
+                {!isSubmitting && 
+                    <IconButton type="submit">
+                        <SearchIcon />
+                    </IconButton>
+                }
+                {isSubmitting && <CircularProgress />}
                 <InputBase
                     id="query"
                     name="query"

@@ -7,6 +7,7 @@ import {
 } from '../../constants/testIds'
 import Layout from '../Layout'
 import ThemeWrapper from '../../utils/themeWrapper'
+const useRouter = jest.spyOn(require('next/router'), 'useRouter')
 
 const setup = () => {
     const setupRender = render(
@@ -21,16 +22,25 @@ const setup = () => {
 
 describe('<Layout /> unit testing', () => {
     it('should render', () => {
+        useRouter.mockImplementationOnce(() => ({
+            query: { q: '' },
+        }))
         const { getByTestId } = setup()
         const appLayout = getByTestId(TEST_ID_APP_LAYOUT)
         expect(appLayout).not.toBeNull()
     })
     it('should contain <AppBar />', () => {
+        useRouter.mockImplementationOnce(() => ({
+            query: { q: '' },
+        }))
         const { getByTestId } = setup()
         const appBar = getByTestId(TEST_ID_APP_BAR)
         expect(appBar).not.toBeNull()
     })
     it('should contain <Footer />', () => {
+        useRouter.mockImplementationOnce(() => ({
+            query: { q: '' },
+        }))
         const { getByTestId } = setup()
         const footer = getByTestId(TEST_ID_APP_FOOTER)
         expect(footer).not.toBeNull()
