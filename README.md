@@ -49,11 +49,21 @@
 <img src="expressAndNextJS.jpg" />
 <p style="text-align:center;"><caption><i>Lovely image by Hoang V. Vo <a href="https://hoangvvo.com/blog/migrate-from-express-js-to-next-js-api-routes/">https://hoangvvo.com/blog/migrate-from-express-js-to-next-js-api-routes/</a></i></caption></p>
 <ul>
-    <li>Higher SEO score (using Lighthouse)</li>
+    <li>Higher SEO score (based on Lighthouse scores)</li>
     <li>Minimized client side rendering time (with client-side hydration)</li>
     <li>Secure server-side business logic</li>
     <li>Backend and Frontend unified in one project</li>
     <li>Universal built-in routing</li>
+</ul>
+<h4>Further reading:</h4>
+<ul>
+    <li>
+        <a href="https://github.com/vercel/next.js/discussions/10437">What is the point of SSR these days? (Github)</a>
+        <a href="https://medium.com/walmartlabs/the-benefits-of-server-side-rendering-over-client-side-rendering-5d07ff2cefe8">The Benefits of Server Side Rendering Over Client Side Rendering (Walmart Labs @ Medium)</a>
+        <a href="https://dev.to/sunnysingh/the-benefits-and-origins-of-server-side-rendering-4doh">The benefits and origins of Server Side Rendering</a>
+        <a href="https://wanago.io/2019/05/27/react-ssr-with-next-js-concept-of-server-side-rendering-routing/">React SSR with Next.js #1. Concept of Server Side Rendering & basics of routing</a>
+        <a href="https://nextjs.org/">Nextjs by Vercel</a>
+    </li>
 </ul>
 <h3 id="requirements">Requirements</h3>
 <ul>
