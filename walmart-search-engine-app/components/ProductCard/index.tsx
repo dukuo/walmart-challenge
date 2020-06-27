@@ -25,6 +25,7 @@ const StyledDiscountBadge = styled(Chip)`
     && {
         background: #CE352E;
         font-weight: bold;
+        color: white;
 
         & > div {
             margin: 5px;
@@ -86,6 +87,7 @@ const MuiCardActions = styled.div`
     align-items: center;
     padding: 20px;
     bottom: 0;
+    margin-top: 80px;
 `
 const AddToCartButton = styled(Button)`
     && {
@@ -152,7 +154,7 @@ const ProductCard = (props: ProductCardProps) => {
                             {mod && 
                                 <StyledDiscountBadge
                                     size="small"
-                                    variant="contained"
+                                    variant="default"
                                     label={`${(mod * 100).toFixed(0)}%`}
                                 />
                             }
