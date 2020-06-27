@@ -59,9 +59,17 @@
 <ul>
     <li>
         <a href="https://github.com/vercel/next.js/discussions/10437">What is the point of SSR these days? (Github)</a>
+    </li>
+    <li>
         <a href="https://medium.com/walmartlabs/the-benefits-of-server-side-rendering-over-client-side-rendering-5d07ff2cefe8">The Benefits of Server Side Rendering Over Client Side Rendering (Walmart Labs @ Medium)</a>
+    </li> 
+    <li>
         <a href="https://dev.to/sunnysingh/the-benefits-and-origins-of-server-side-rendering-4doh">The benefits and origins of Server Side Rendering</a>
+    </li>   
+    <li>
         <a href="https://wanago.io/2019/05/27/react-ssr-with-next-js-concept-of-server-side-rendering-routing/">React SSR with Next.js #1. Concept of Server Side Rendering & basics of routing</a>
+    </li>
+    <li>
         <a href="https://nextjs.org/">Nextjs by Vercel</a>
     </li>
 </ul>
