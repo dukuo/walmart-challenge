@@ -68,7 +68,7 @@ describe('<SearchBarForm /> unit testing', () => {
                     value: 'as'
                 }
             })
-            // fireEvent.submit(searchForm)
+            fireEvent.submit(searchForm)
         })
         expect(mockSubmit).not.toBeCalled()
     })
