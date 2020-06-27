@@ -10,6 +10,10 @@ import Pagination from '../../components/Pagination'
 import { ProductRecord } from '../../interfaces'
 import { TXT_SEARCH_NO_RESULTS } from '../../constants/text'
 
+type ProductCardListItemProps = {
+    product: ProductRecord
+}
+
 const ProductCardListGrid = styled(Grid)`
     && {
         display: flex;
@@ -44,6 +48,17 @@ const SearchLayoutGridContainer = styled(Grid)`
         margin-right: 0;
     }
 `
+
+const MessageContainer = styled.div`
+    && {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 600px;
+    }
+`
 const NoResults = () => (
     <StyledNoResults>
         <Typography variant="h4">
@@ -52,10 +67,6 @@ const NoResults = () => (
     </StyledNoResults>
 )
 
-type ProductCardListItemProps = {
-    product: ProductRecord
-}
-
 const ProductCardListItem = ({ product }: ProductCardListItemProps) => (
     <ProductCardGridItem item xs={12} md={4}>
         <ProductCardContainer>
@@ -63,12 +74,7 @@ const ProductCardListItem = ({ product }: ProductCardListItemProps) => (
         </ProductCardContainer>
     </ProductCardGridItem>
 )
-const MessageContainer = styled.div`
-    flex: 1;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
-`
+
 const LoadingResults = () => (
     <MessageContainer>
         <CircularProgress />
