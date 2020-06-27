@@ -47,6 +47,7 @@
 <h3 id="ssr">NextJS & SSR: A Primer</h3>
 <p>Some of NextJS awesome features:</p>
 <img src="expressAndNextJS.jpg" />
+<p style="text-align:center;"><caption><i>Lovely image by Hoang V. Vo <a href="https://hoangvvo.com/blog/migrate-from-express-js-to-next-js-api-routes/">https://hoangvvo.com/blog/migrate-from-express-js-to-next-js-api-routes/</a></i></caption></p>
 <ul>
     <li>Higher SEO score (using Lighthouse)</li>
     <li>Minimized client side rendering time (with client-side hydration)</li>
