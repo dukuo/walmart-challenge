@@ -87,6 +87,7 @@
 
 <h3 id="#todo">TODO</h3>
 <ul>
+    <li>Fuzzy text search instead of built-in full-text mongo search using mongoose-fuzzy-searching</li>
     <li>More intensive unit & integration tests</li>
     <li>Async form submission onChange</li>
     <li>Responsive UI</li>
