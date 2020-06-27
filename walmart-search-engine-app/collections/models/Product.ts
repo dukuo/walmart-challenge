@@ -1,3 +1,4 @@
+import mongoose from 'mongoose'
 import { model, Schema } from 'mongoose'
 import { Product } from '../../interfaces'
 
@@ -24,6 +25,21 @@ const schemaConfig = {
         required: true
     }
 }
-const ProductSchema:Schema = new Schema(schemaConfig)
+const ProductSchema: Schema = new Schema(schemaConfig, { id: false })
 
-export default model<Product>('Product', ProductSchema)
+ProductSchema.index({
+    brand: "text",
+    description: "text"
+})
+
+let ProductModel:any
+
+try {
+    ProductModel = mongoose.model('products')
+} catch(e) {
+    ProductModel = model<Product>('products', ProductSchema, 'products')
+}
+
+ProductModel.ensureIndexes()
+
+export default ProductModel
