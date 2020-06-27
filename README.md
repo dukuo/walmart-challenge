@@ -67,6 +67,11 @@
 <code>
     yarn test
 </code>
+<br />
+<p>Code coverage:</p>
+<code>
+    yarn test:coverage
+</code>
 
 
 <h3 id="Credits">Credits</h3>
