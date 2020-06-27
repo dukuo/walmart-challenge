@@ -46,7 +46,7 @@ const SearchProduct = (props: any) => {
     const [isLoading, setLoading] = React.useState(false)
     
     React.useEffect(() => {
-        if(router.query.q) {
+        if(router && router.query.q) {
             setLoading(true)
             const fetchData = async api => {
                 let response = await fetchDataCall({ api: api });

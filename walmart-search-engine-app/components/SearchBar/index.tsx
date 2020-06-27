@@ -24,7 +24,7 @@ type SearchBarProps = {
 const SearchBar = ({ submit }: SearchBarProps) => {
     const router = useRouter()
     React.useEffect(() => {
-        if(router.query.q) {
+        if (router && router.query.q) {
             propsToValues = {
                 query: router.query.q.toString()
             }
