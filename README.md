@@ -66,7 +66,7 @@
     yarn
 </code>
 <h3 id="usage">Usage</h3>
-<p>To make sure we are starting fresh use the following docker-compose command:</p>
+<p>To make sure we are starting fresh use the following docker-compose command from the root folder of the cloned repo:</p>
 <code>docker-compose up --force-recreate</code>
 <p>The app will be available at <a href="http://localhost:3000/search/products">http://localhost:3000/search/products</a></p>
 <h3 id="test">Testing</h3>
@@ -74,6 +74,7 @@
 <code>
     yarn test
 </code>
+<br />
 <br />
 <p>Code coverage:</p>
 <code>
