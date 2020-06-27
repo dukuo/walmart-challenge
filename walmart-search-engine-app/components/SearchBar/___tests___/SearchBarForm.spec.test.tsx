@@ -58,14 +58,14 @@ describe('<SearchBarForm /> unit testing', () => {
         expect(submitButton).not.toBeNull()
     })
 
-    it('should not submit because text input is less than 4 characters', async () => {
+    it('should not submit because text input is less than 3 characters', async () => {
         const { searchInput, mockSubmit, getByTestId } = setup()
         const searchForm = getByTestId('search-form')
 
         await waitFor(() => {
             fireEvent.change(searchInput!, {
                 target: {
-                    value: 'asd'
+                    value: 'as'
                 }
             })
             fireEvent.submit(searchForm!)

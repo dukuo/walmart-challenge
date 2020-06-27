@@ -1,6 +1,5 @@
 import { applyTransformation } from '../..'
 import { ProductRecord } from '../../../interfaces'
-import Product from '../../../collections/models/Product'
 
 const sampleProducts: Array<ProductRecord> = [
     {
@@ -36,7 +35,7 @@ const sampleProducts: Array<ProductRecord> = [
 describe('product record transformation', () => {
     it('should apply 50% `price` discount to each sample product', () => {
         const discountFactor = 0.5 // 50%
-        const discountTransformation = (product: ProductRecord) => ({ ...product, price: product.price * discountFactor })
+        const discountTransformation = (product: ProductRecord) => ({ ...product, price: discountFactor * product.price })
         const fiftyPercentDiscountedProducts: Array<ProductRecord> = applyTransformation(sampleProducts, discountTransformation)
         expect(fiftyPercentDiscountedProducts[0].price).toBe(sampleProducts[0].price * discountFactor)
     })
