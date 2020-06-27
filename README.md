@@ -35,6 +35,13 @@
     <li>Typescript</li>
 </ul>
 
+<h4>Testing</h4>
+<ul>
+    <li>Jest</li>
+    <li>@testing-library/react</li>
+    <li>msw (todo)</li>
+</ul>
+
 
 </ul>
 <h3 id="ssr">NextJS & SSR: A Primer</h3>
@@ -86,4 +93,6 @@
     <li>Refactor utility methods</li>
     <li>Keep researching of proper git flow practices</li>
     <li>Optimize computing intensive methods</li>
+    <li>Testing: Mock network with msw</li>
+    <li>Testing: Complete todos</li>
 </ul>
