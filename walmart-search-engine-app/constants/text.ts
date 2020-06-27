@@ -6,3 +6,5 @@ export const TXT_BUTTON_MENU = 'Categorías'
 export const TXT_BUTTON_SUPERMARKET = 'Supermercado'
 
 export const TXT_SEARCH_NO_RESULTS  = 'No hay resultados.'
+
+export const TXT_SEARCH_RESULTS_TITLE = 'Resultados para: '

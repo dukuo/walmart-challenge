@@ -1,11 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Grid, Typography } from '@material-ui/core'
-import SearchList from './SearchList'
+import {
+    CircularProgress,
+    Grid,
+    Typography
+} from '@material-ui/core'
 import ProductCard from '../../components/ProductCard'
 import Pagination from '../../components/Pagination'
 import { ProductRecord } from '../../interfaces'
 import { TXT_SEARCH_NO_RESULTS } from '../../constants/text'
+
 const ProductCardListGrid = styled(Grid)`
     && {
         display: flex;
@@ -20,7 +24,7 @@ const StyledNoResults = styled.div`
         display: flex;
         align-items: center;
         justify-content: center;
-        
+        min-height: 600px;
     }
 `
 const ProductCardGridItem = styled(Grid)`
@@ -59,27 +63,44 @@ const ProductCardListItem = ({ product }: ProductCardListItemProps) => (
         </ProductCardContainer>
     </ProductCardGridItem>
 )
+const MessageContainer = styled.div`
+    flex: 1;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+`
+const LoadingResults = () => (
+    <MessageContainer>
+        <CircularProgress />
+    </MessageContainer>
+)
 
 type SearchLayoutProps = {
     products?: Array<ProductRecord>
+    loading?: boolean
 }
 
 const SearchLayout = (props: SearchLayoutProps) => {
-    const { products = [] } = props
-    return products.length > 0 ? (
-        <SearchLayoutGridContainer container>
-            <ProductCardListGrid item xs={12}>
-                {products.map((product, i) => <ProductCardListItem key={`ProductResultCard-${i}`} product={product} />)}
-            </ProductCardListGrid>
-            <Grid container>
-                <Grid item xs={12}>
-                    <Pagination />
-                </Grid>
-            </Grid>
-        </SearchLayoutGridContainer>
+    const { products = [], loading = false } = props
+    console.log(props)
+    return loading ? (
+        <LoadingResults />
     )
         :
-        <NoResults />
+        products.length > 0 ? (
+            <SearchLayoutGridContainer container>
+                <ProductCardListGrid item xs={12}>
+                    {products.map((product, i) => <ProductCardListItem key={`ProductResultCard-${i}`} product={product} />)}
+                </ProductCardListGrid>
+                <Grid container>
+                    <Grid item xs={12}>
+                        <Pagination />
+                    </Grid>
+                </Grid>
+            </SearchLayoutGridContainer>
+        )
+            :
+            <NoResults />
 }
 
 export default SearchLayout
