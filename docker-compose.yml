@@ -1,14 +1,14 @@
-
 version: "3"
 services:
   search-engine-app:
     build:
       context: ./walmart-search-engine-app
+    restart: always
     command: yarn dev
     depends_on:
       - db
     environment:
-      - MONGO_URI
+      - MONGO_URI=mongodb://productListUser:productListPassword@db:27017/promotions?authSource=admin
     volumes:
       - ./walmart-search-engine-app:/search-engine-app
       - ./walmart-search-engine-app/package.json:/search-engine-app/package.json
