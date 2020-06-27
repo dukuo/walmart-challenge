@@ -5,9 +5,6 @@ import AppBar from '../'
 const useRouter = jest.spyOn(require('next/router'), 'useRouter')
 
 const setup = () => {
-    useRouter.mockImplementationOnce(() => ({
-        query: { q: '' },
-    }))
     const renderSetup = render(
         <ThemeWrapper>
             <AppBar />
@@ -25,6 +22,7 @@ describe('App bar unit testing', () => {
     it('should render a <header /> component', () => {
         useRouter.mockImplementationOnce(() => ({
             query: { q: '' },
+            pathname: ''
         }))
         const { headerComponent } = setup()
 

@@ -23,7 +23,8 @@ const setup = () => {
 describe('<Layout /> unit testing', () => {
     it('should render', () => {
         useRouter.mockImplementationOnce(() => ({
-            query: { q: '' },
+            query: { q: ''},
+            pathname: ''
         }))
         const { getByTestId } = setup()
         const appLayout = getByTestId(TEST_ID_APP_LAYOUT)
@@ -31,7 +32,8 @@ describe('<Layout /> unit testing', () => {
     })
     it('should contain <AppBar />', () => {
         useRouter.mockImplementationOnce(() => ({
-            query: { q: '' },
+            query: { q: ''},
+            pathname: ''
         }))
         const { getByTestId } = setup()
         const appBar = getByTestId(TEST_ID_APP_BAR)
@@ -39,7 +41,8 @@ describe('<Layout /> unit testing', () => {
     })
     it('should contain <Footer />', () => {
         useRouter.mockImplementationOnce(() => ({
-            query: { q: '' },
+            query: { q: ''},
+            pathname: ''
         }))
         const { getByTestId } = setup()
         const footer = getByTestId(TEST_ID_APP_FOOTER)
