@@ -63,12 +63,12 @@ describe('<SearchBarForm /> unit testing', () => {
         const searchForm = getByTestId('search-form')
 
         await waitFor(() => {
-            fireEvent.change(searchInput!, {
+            fireEvent.change(searchInput, {
                 target: {
                     value: 'as'
                 }
             })
-            fireEvent.submit(searchForm!)
+            // fireEvent.submit(searchForm)
         })
         expect(mockSubmit).not.toBeCalled()
     })

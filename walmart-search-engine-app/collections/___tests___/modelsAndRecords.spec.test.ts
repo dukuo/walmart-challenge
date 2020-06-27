@@ -1,4 +1,3 @@
-import mongoose from 'mongoose'
 import inMemoryMongoDatabase from '../../utils/inMemoryMongo'
 import Product from '../models/Product'
 
