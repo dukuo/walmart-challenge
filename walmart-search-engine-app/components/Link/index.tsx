@@ -20,7 +20,7 @@ NextComposed.propTypes = {
   as: PropTypes.string,
   href: PropTypes.string,
   prefetch: PropTypes.bool,
-  forwardedRef: PropTypes.any.isRequired
+  forwardedRef: PropTypes.any
 };
 
 // A styled version of the Next.js Link component:
@@ -29,7 +29,7 @@ function Link(props:any) {
   const { activeClassName, router, className: classNameProps, innerRef, naked, ...other } = props;
 
   const className = clsx(classNameProps, {
-    [activeClassName]: router && router.pathname === props.href && activeClassName,
+    [activeClassName]: (router && router.pathname === props.href) ? activeClassName : '',
   });
 
   if (naked) {

@@ -3,16 +3,18 @@ import styled from 'styled-components'
 import {
     Button
 } from '@material-ui/core'
-import {
-    ShoppingCart as ShoppingCartIcon
-} from '@material-ui/icons'
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCartOutlined';
+import { lighten } from 'polished';
 
 const StyledCartButton = styled(Button)`
     && {
         background: ${(props: any) => props.theme.palette.darkPrimary.main};
         color: ${props => props.theme.palette.darkPrimary.contrastText};
         padding: 10px 13px;
-        
+        margin: 0 10px;
+        &:hover {
+            background: ${(props: any) => lighten(.15, props.theme.palette.darkPrimary.main)};
+        }
     }
 `
 const StyledBadge = styled.div`
@@ -23,6 +25,7 @@ const StyledBadge = styled.div`
         width: 26px;
         height: 26px;
         border-radius: 50%;
+        font-weight: bold;
         background: ${props => props.theme.palette.secondary.main};
         color: ${props => props.theme.palette.primary.main};
     }

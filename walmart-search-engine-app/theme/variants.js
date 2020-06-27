@@ -14,6 +14,10 @@ const darkVariant = {
     darkPrimary: {
       main: "#133355",
       contrastText: "#F7BB5A"
+    },
+    tertiary: {
+      main: "#73B054",
+      contrastText: "#DDF5CC"
     }
   },
   header: {
@@ -73,6 +77,10 @@ const lightVariant = {
     darkPrimary: {
       main: "#20578B",
       contrastText: "#F7BB5A"
+    },
+    tertiary: {
+      main: "#73B054",
+      contrastText: "#DDF5CC"
     }
   },
   header: {
@@ -111,7 +119,7 @@ const lightVariant = {
     }
   },
   body: {
-    background: grey[100]
+    background: "#F5F5F5"
   },
   spacer: {
     borderColor: grey[300]

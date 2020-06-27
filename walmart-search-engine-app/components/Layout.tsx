@@ -6,16 +6,20 @@ import AppBar from './AppBar'
 import Footer from './Footer'
 import InformationBar from './AppBar/InformationBar'
 
-type Props = {
+type LayoutProps = {
   children?: ReactNode
   title?: string
+  onSearchSubmit?: any
 }
 
 const FullWidthContainer = styled.div`
-  flex-grow: 1;
+  && {
+    flex-grow: 1;
+    background: ${props => props.theme.body.background};
+  }
 `
 
-const Layout = ({ children, title = '#JuntosNosCuidamos' }: Props) => (
+const Layout = ({ children, title = '#JuntosNosCuidamos', onSearchSubmit }: LayoutProps) => (
   <FullWidthContainer data-testid={TEST_ID_APP_LAYOUT}>
     <Head>
       <title>{title}</title>
@@ -23,7 +27,7 @@ const Layout = ({ children, title = '#JuntosNosCuidamos' }: Props) => (
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
     <InformationBar />
-    <AppBar />
+    <AppBar submit={onSearchSubmit} />
     {children}
     <Footer />
   </FullWidthContainer>

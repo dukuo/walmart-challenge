@@ -9,10 +9,19 @@ import {
 } from '@material-ui/icons'
 import { TXT_BUTTON_MENU } from '../constants/text'
 import { TEST_ID_BUTTON_MENU } from '../constants/testIds'
+import { lighten } from 'polished'
 
 const StyledButton = styled(Button)`
-    background: ${props => props.theme.palette.darkPrimary.main};
-    color: white;
+    && {
+        background: ${props => props.theme.palette.darkPrimary.main};
+        color: white;
+        padding: 10px 13px;
+        margin: 0 10px;
+        padding-right: 30px;
+        &:hover {
+            background: ${props => lighten(.15, props.theme.palette.darkPrimary.main)};
+        }
+    }
 `
 
 type MenuButtonProps = {
@@ -24,8 +33,8 @@ const MenuButton = ({ click }:MenuButtonProps) => (
         onClick={click}
         variant="contained"
         data-testid={TEST_ID_BUTTON_MENU}
+        startIcon={<MenuIcon />}
     >
-        <MenuIcon />
         {TXT_BUTTON_MENU}
     </StyledButton>
 )

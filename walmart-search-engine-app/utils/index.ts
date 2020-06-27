@@ -3,7 +3,7 @@ import { ProductRecord } from '../interfaces'
 
 const checkLength = (query:string, length:number):boolean => query.length === length // replace with string length check function
 
-export const applyTransformation = (objects:Array<ProductRecord>, transformation:any):Array<ProductRecord> => objects.map(transformation)
+export const applyTransformation = (objects:Array<ProductRecord>, transformation:any):Array<ProductRecord> => objects.map((object:any) => transformation(object))
 
 export const isPalindrome = (query:string):boolean => {
     const sanitizedQuery = query.toLowerCase().replace(/[\W_]/g, '')

@@ -5,11 +5,12 @@ export type User = {
   name: string
 }
 export interface ProductRecord {
-  id: Number
-  brand: String
-  description: String
-  image: String
-  price: Number
+  id: number
+  brand: string
+  description: string
+  image: string
+  price: number
+  mod?:number
 }
 export interface Product extends Document {
   id: number

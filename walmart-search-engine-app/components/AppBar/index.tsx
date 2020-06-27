@@ -7,6 +7,8 @@ import {
 
 import SearchBar from '../SearchBar'
 import CartButton from '../CartButton'
+import MenuButton from '../MenuButton'
+import SupermarketButton from '../SupermarketButton'
 import Logo from '../Logo'
 import { TEST_ID_APP_BAR } from '../../constants/testIds'
 
@@ -14,7 +16,18 @@ const StyledMuiAppBar = styled(MuiAppBar)`
     background: ${props => props.theme.palette.main};
 `
 
-const AppBar = () => {
+const StyledSearchBarContainer = styled.div`
+    && {
+        margin: 0 70px;
+        flex: 1;
+    }
+`
+
+type AppBarProps = {
+    submit?: any
+}
+
+const AppBar = ({ submit }:AppBarProps) => {
     const [count, setCount] = React.useState(0)
     const handleCartButtonClick = () => setCount(count + 1)
     return (
@@ -25,11 +38,15 @@ const AppBar = () => {
             >
                 <Toolbar>
                     <Logo />
-                    <SearchBar />
+                    <MenuButton />
+                    <StyledSearchBarContainer>
+                        <SearchBar submit={submit} />
+                    </StyledSearchBarContainer>
                     <CartButton
                         click={handleCartButtonClick}
                         count={count}
                     />
+                    <SupermarketButton />
                 </Toolbar>
             </StyledMuiAppBar>
         </div>

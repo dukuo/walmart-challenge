@@ -38,7 +38,6 @@ const SearchForm = (props: OtherProps & FormikProps<FormValues>) => {
         touched,
         isSubmitting
     } = props
-
     return (
         <SearchBarPaper>
             <form onSubmit={handleSubmit} data-testid="search-form">
