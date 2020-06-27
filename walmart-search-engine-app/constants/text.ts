@@ -8,3 +8,8 @@ export const TXT_BUTTON_SUPERMARKET = 'Supermercado'
 export const TXT_SEARCH_NO_RESULTS  = 'No hay resultados.'
 
 export const TXT_SEARCH_RESULTS_TITLE = 'Resultados para: '
+
+export const TXT_BUTTON_ADD_TO_CART = 'Agregar'
+
+export const TXT_PRODUCT_CARD_CHIP_DELIVERY = 'despacho'
+export const TXT_PRODUCT_CARD_CHIP_LOCAL = 'retiro'

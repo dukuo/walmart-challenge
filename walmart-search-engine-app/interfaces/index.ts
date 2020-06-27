@@ -11,6 +11,7 @@ export interface ProductRecord {
   image: string
   price: number
   mod?:number
+  productActions?:boolean
 }
 export interface Product extends Document {
   id: number

@@ -19,15 +19,21 @@ const handler = async (_req: NextApiRequest, res: NextApiResponse) => {
         if (parseInt(query)) {
             const id = parseInt(query)
             products = await ProductController.GetProduct(id)
-            products = [products]
+            products = [{
+                ...products.toObject(),
+                productActions: true
+            }]
+            console.log("MOD PRODUCT", products)
+            
         } else {
             products = await ProductController.SearchProducts(`${query}`)
+            products.toObject()
         }
 
         if (isPalindrome(query)) {
             const discountFactor = .5
             const transformation = (product: any) => ({
-                ...product.toObject(),
+                ...product,
                 price: discountFactor * product.price,
                 mod: discountFactor
             })

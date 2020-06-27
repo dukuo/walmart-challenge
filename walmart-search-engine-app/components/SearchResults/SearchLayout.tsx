@@ -82,7 +82,6 @@ type SearchLayoutProps = {
 
 const SearchLayout = (props: SearchLayoutProps) => {
     const { products = [], loading = false } = props
-    console.log(props)
     return loading ? (
         <LoadingResults />
     )

@@ -1,28 +1,30 @@
 import React from 'react'
 import styled from 'styled-components'
 import {
+    Button,
     Card,
+    Chip,
     CardActions,
     CardContent,
     CardMedia,
     Typography,
 
 } from '@material-ui/core'
+import LocalShippingOutlinedIcon from '@material-ui/icons/LocalShippingOutlined';
+import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
+
+import {
+    TXT_BUTTON_ADD_TO_CART,
+    TXT_PRODUCT_CARD_CHIP_DELIVERY,
+    TXT_PRODUCT_CARD_CHIP_LOCAL,
+} from '../../constants/text'
 import { TEST_ID_CARD_PRODUCT } from '../../constants/testIds'
 import { ProductRecord } from '../../interfaces'
 
-const StyledDiscountBadge = styled.div`
+const StyledDiscountBadge = styled(Chip)`
     && {
         background: #CE352E;
-        border: none;
-        border-radius: 30%;
-        padding: 3px 5px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         font-weight: bold;
-        color: white;
-        font-size: 1em;
 
         & > div {
             margin: 5px;
@@ -79,6 +81,21 @@ const MuiProductMedia = styled(CardMedia)`
     min-height: 360px;
     background: #555;
 `
+const MuiCardActions = styled.div`
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    bottom: 0;
+`
+const AddToCartButton = styled(Button)`
+    && {
+        border-radius: 40px;
+        color: ${props => props.theme.palette.primary.main};
+        margin-top: 15px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, .1);
+    }
+`
+
 type ProductCardProps = {
     product: ProductRecord
 }
@@ -92,8 +109,9 @@ const ProductCard = (props: ProductCardProps) => {
             description,
             image,
             price,
-            mod = null
-        }
+            mod = null,
+            productActions = false,
+        },
     } = props
 
     const currencyFormatter = new Intl.NumberFormat('es-ES', {
@@ -101,6 +119,8 @@ const ProductCard = (props: ProductCardProps) => {
         currency: 'CLP',
         minimumFractionDigits: 0
     })
+
+    const addToCartHandler = (id: number) => console.log(`Added product ID ${id} to cart.`)
 
     return (
         <>
@@ -129,7 +149,13 @@ const ProductCard = (props: ProductCardProps) => {
                             </PriceTypography>
                         </SpacedDiv>
                         <SpacedDiv>
-                            {mod && <StyledDiscountBadge>{(mod * 100).toFixed(0)}%</StyledDiscountBadge>}
+                            {mod && 
+                                <StyledDiscountBadge
+                                    size="small"
+                                    variant="contained"
+                                    label={`${(mod * 100).toFixed(0)}%`}
+                                />
+                            }
                         </SpacedDiv>
                     </MultiTypography>
                     <SpacedDiv>
@@ -140,6 +166,33 @@ const ProductCard = (props: ProductCardProps) => {
                         }
                     </SpacedDiv>
                 </CardContent>
+                {productActions &&
+                    <MuiCardActions>
+                        <MultiTypography>
+                            <Chip
+                                variant="outlined"
+                                icon={<LocalShippingOutlinedIcon />}
+                                label={TXT_PRODUCT_CARD_CHIP_DELIVERY}
+                                color="primary"
+                                size="small"
+                            />
+                            <Chip
+                                variant="outlined"
+                                icon={<HomeOutlinedIcon />}
+                                label={TXT_PRODUCT_CARD_CHIP_LOCAL}
+                                color="secondary"
+                                size="small"
+                            />
+                        </MultiTypography>
+                        <AddToCartButton
+                            fullWidth
+                            color="primary"
+                            onClick={() => addToCartHandler(id)}
+                        >
+                            {TXT_BUTTON_ADD_TO_CART}
+                        </AddToCartButton>
+                    </MuiCardActions>
+                }
             </MuiProductCard>
         </>
     )
