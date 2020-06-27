@@ -113,7 +113,7 @@
     <li>Responsive UI</li>
     <li>Better pagination</li>
     <li>Refactor utility methods</li>
-    <li>Keep researching of proper git flow practices</li>
+    <li>Keep researching about proper git flow practices</li>
     <li>Optimize computing intensive methods</li>
     <li>Testing: Mock network with msw</li>
     <li>Testing: Complete todos</li>
