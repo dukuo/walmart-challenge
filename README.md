@@ -13,7 +13,7 @@
 
 
 <h3 id="introduction">Introduction</h3>
-<p>This is a solution for the Walmart Fullstack Challenge provided by Kibernum.</p>
+<p>This is a solution for the Walmart Fullstack Challenge.</p>
 
 <h3 id="technologies">Technologies</h3>
 <p>The solution consists of an universal app with Server-Side Rendering with a tiny API using NextJS <a href="https://nextjs.org/docs/api-routes/introduction">API Routes</a>, a Mongoose database and served with Docker Compose.</p>
