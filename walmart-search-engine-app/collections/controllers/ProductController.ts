@@ -12,7 +12,12 @@ async function CreateProduct(record: any) {
         })
 }
 async function GetProduct(id: any) {
-    return Product.findOne({ id })
+    const product = Product.findOne({ id })
+    if(product != null) {
+        return product
+    } else {
+        return []
+    }
 }
 
 async function FuzzySearchProduct(query:string) {

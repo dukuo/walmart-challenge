@@ -95,7 +95,7 @@ const SearchLayout = (props: SearchLayoutProps) => {
         products.length > 0 ? (
             <SearchLayoutGridContainer container>
                 <ProductCardListGrid item xs={12}>
-                    {products.map((product, i) => <ProductCardListItem key={`ProductResultCard-${i}`} product={product} />)}
+                    {products && products.length && products.map((product, i) => <ProductCardListItem key={`ProductResultCard-${i}`} product={product} />)}
                 </ProductCardListGrid>
                 <Grid container>
                     <Grid item xs={12}>

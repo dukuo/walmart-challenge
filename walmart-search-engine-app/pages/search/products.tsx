@@ -53,7 +53,7 @@ const SearchProduct = (props: any) => {
     const [products, setProducts] = React.useState([])
     const [activeProducts, setActiveProducts] = React.useState([])
     const [currentPage, setCurrentPage] = React.useState(0)
-    const [totalPages, setTotalPages] = React.useState(products.length / MAX_PRODUCTS_PER_PAGE)
+    const [totalPages, setTotalPages] = products && React.useState(products.length / MAX_PRODUCTS_PER_PAGE)
     const [isLoading, setLoading] = React.useState(false)
     const [searchQuery, setSearchQuery] = React.useState('')
 
@@ -62,7 +62,7 @@ const SearchProduct = (props: any) => {
             const fetchData = async api => {
                 setLoading(true)
                 let response = await fetchDataCall({ api: api });
-                setProducts(response && response.data);
+                // setProducts(response && response.data);
             };
 
             fetchData(`${API_SEARCH_PRODUCT}/${router.query.q}`);
@@ -71,7 +71,7 @@ const SearchProduct = (props: any) => {
     }, [router])
 
     React.useEffect(() => {
-        setActiveProducts(products.slice(currentPage, MAX_PRODUCTS_PER_PAGE))
+        products.length > 0 && setActiveProducts(products.slice(currentPage, MAX_PRODUCTS_PER_PAGE))
         setLoading(false)
     }, [products])
 

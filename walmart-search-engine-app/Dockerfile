@@ -9,8 +9,8 @@ COPY . /usr/src/app
 RUN npm run build
 
 ### STAGE 2: Production Environment ###
-FROM nginx:1.17.10-alpine
-COPY --from=build /usr/src/app/build /usr/share/nginx/html
+FROM hoosin/alpine-nginx-nodejs:latest
+COPY --from=build /usr/src/app/.next /usr/share/nginx/html
 RUN rm /etc/nginx/conf.d/default.conf
 COPY nginx.conf /etc/nginx/conf.d
 # COPY ./.env /usr/share/nginx/html/.env
