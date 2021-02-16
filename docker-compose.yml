@@ -4,7 +4,8 @@ services:
     build:
       context: ./walmart-search-engine-app
     restart: always
-    command: yarn dev
+    command: npm run dev
+    working_dir: /search-engine-app
     depends_on:
       - db
     environment:
@@ -27,6 +28,6 @@ services:
     depends_on:
       - db
     working_dir: /database
-    command: /bin/bash -c './import.sh db'
+    command: /bin/bash -c 'chmod 777 ./import.sh  && ./import.sh db'
     volumes:
       - ./database:/database
